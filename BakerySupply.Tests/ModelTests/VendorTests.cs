@@ -6,8 +6,12 @@ using System;
 namespace BakerySupply.Tests
 {
     [TestClass]
-    public class VendorTests
+    public class VendorTests : IDisposable
     {
+         public void Dispose()
+        {
+            Vendor.IdCounter = 0;
+        }
         [TestMethod]
         public void VendorConstructor_InstantiateVendorClass_Vendor()
         {
@@ -27,6 +31,13 @@ namespace BakerySupply.Tests
         {
             Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
             Assert.AreEqual("Cornerstore that orders bread", testVendor.Description);
+        }
+
+         [TestMethod]
+        public void IdCounterField_IdCounterFieldCanBeSetWithConstructor_Int()
+        {
+            Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
+            Assert.AreEqual(1, Vendor.IdCounter);
         }
     }
 }

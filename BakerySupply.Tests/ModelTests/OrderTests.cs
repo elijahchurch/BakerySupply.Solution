@@ -49,7 +49,7 @@ namespace BakerySupply.Tests
         }
 
         [TestMethod]
-        public void UniqueIdField_UniqueIdFieldCanBeSetWithConstructor_Int()
+        public void IdCounterField_IdCounterFieldCanBeSetWithConstructor_Int()
         {
             Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
             Assert.AreEqual(1, Order.IdCounter);
