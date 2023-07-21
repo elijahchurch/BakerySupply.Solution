@@ -89,6 +89,19 @@ namespace BakerySupply.Tests
             CollectionAssert.AreEqual(expectedList, resultList);
         }
 
+        [TestMethod]
+        public void Delete_RemoveVendorFromList_Void()
+        {
+            Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
+            Vendor vendor2 = new Vendor("Coffee Shop", "Shop located downtown");
+            Vendor vendor3 = new Vendor("Bakery", "Bakery custormer");
+            Vendor removeVendor = Vendor.FindVendor(2);
+            Vendor.Delete(removeVendor);
+            List<Vendor> expected = new List<Vendor> {testVendor, vendor3};
+            List<Vendor> result = Vendor.GetAll();
+            CollectionAssert.AreEqual(expected, result);
+        }
+
 
     }
 }

@@ -41,5 +41,22 @@ namespace BakerySupply.Controllers
             chosenVendor.AddOrder(newOrder);
             return View("Show", chosenVendor);
         }
+
+        [HttpGet("/vendors/{id}/edit")]
+        public ActionResult Edit(int id)
+        {
+            Vendor chosenVendor = Vendor.FindVendor(id);
+            return View(chosenVendor);
+        }
+
+        [HttpPost("/vendors/{id}")]
+        public ActionResult Patch(string name, string description, int id)
+        {
+            Vendor chosenVendor = Vendor.FindVendor(id);
+            chosenVendor.Name = name;
+            chosenVendor.Description = description;
+            return View("Show", chosenVendor);
+        }
+
     }
 }

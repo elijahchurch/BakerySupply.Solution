@@ -1,0 +1,16 @@
+@{
+    Layout = "_Layout";
+}
+
+@* Model is chosen vendor *@
+
+<h1> Fill out this form to update @Model.Name Vender Page </h1>
+<form action="/vendors/@Model.Id" method="post">
+    <label for="name">Update Vendor's name:</label>
+    <input id="name" name="name" type="text" required>
+    <label for="description">Update Vendor's information:</label>
+    <input id="description" name="description" type="text" required>
+    <button type="submit">Submit Update</button>
+</form>
+
+<p><a href="/">Go Back To Home</a></p>

@@ -39,5 +39,10 @@ namespace BakerySupply.Models
         {
             _vendorList.Clear();
         }
+
+        public static void Delete(Vendor foundVendor)
+        {
+            _vendorList.Remove(foundVendor);
+        }
     }
 }
