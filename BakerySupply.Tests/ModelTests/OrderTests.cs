@@ -6,15 +6,14 @@ using System;
 namespace BakerySupply.Tests
 {
     [TestClass]
-    public class VendorTests
+    public class OrderTests
     {
         // Test methods go here
         [TestMethod]
-        public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+        public void Orderconstructor_InstantiateOrderClass_Order()
         {
-        // any necessary logic to prep for test; instantiating new classes, etc.
-        // we can also use the arrange, act, assert organization in any test. 
-        Assert.AreEqual(ExpectedResult, CodeToTest);
+        Order testOrder = new Order("test", "5 bagels", 14.50, "7/6/23");
+        Assert.AreEqual(typeof(Order), testOrder.GetType());
         }
     }
 }

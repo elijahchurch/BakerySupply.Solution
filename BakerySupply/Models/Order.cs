@@ -4,6 +4,10 @@ namespace BakerySupply.Models
 {
     public class Order
     {
-        // Business Logic goes here.
+
+        public Order(string name, string description, float price, string date)
+        {
+
+        }
     }
 }
