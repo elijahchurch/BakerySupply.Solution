@@ -1,0 +1,14 @@
+@{
+    Layout = "_Layout";
+}
+
+<h1> Fill out this form to add a new vendor for your business.</h1>
+<form action="/vendors" method="post">
+    <label for="name">Enter the vendor's name:</label>
+    <input id="name" name="name" type="text" required>
+    <label for="description">Enter a brief description of the vendor:</label>
+    <input id="description" name="description" type="text" required>
+    <button type="submit">Submit Vendor</button>
+</form>
+
+<p><a href="/">Go Back To Home</a></p>
