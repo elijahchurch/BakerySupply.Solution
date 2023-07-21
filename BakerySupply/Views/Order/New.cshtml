@@ -1,0 +1,23 @@
+@{
+    Layout = "_Layout";
+}
+
+<h1> Fill out this form to create a new order for @Model.Name</h1>
+<form action="/categories/@Model.Id" method="post">
+    <label for="name">Enter a name for this Order:</label>
+    <input id="name" name="name" type="text" required>
+    <br>
+    <label for="description">Enter a brief description for this order:</label>
+    <input id="description" name="description" type="text" required>
+    <br>
+    <label for="cost">Cost of Order:</label>
+    <input id="cost" name="cost" type="number" min="0" required>
+    <br>
+    <label for="date">Date of Order:</label>
+    <input id="date" name="date" type="date" required>
+    <br>
+    <button type="submit">Submit Order</button>
+</form>
+
+<br>
+<p><a href="/categories/@Model.Id">Go Back To @Model.Name Vendor Page</a></p>
