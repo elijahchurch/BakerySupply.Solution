@@ -35,10 +35,10 @@ namespace BakerySupply.Tests
         }
 
         [TestMethod]
-        public void OrderConstructor_ReturnsPrice_Int()
+        public void OrderConstructor_ReturnsPriceAsFormattedString_String()
         {
-            Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
-            Assert.AreEqual(14, testOrder.Price);
+            Order testOrder = new Order("test", "5 bagels", 14563, "7/6/23");
+            Assert.AreEqual("$14,563.00", testOrder.Price);
         }
 
         [TestMethod]
