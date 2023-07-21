@@ -10,10 +10,17 @@ namespace BakerySupply.Tests
     {
         // Test methods go here
         [TestMethod]
-        public void Orderconstructor_InstantiateOrderClass_Order()
+        public void OrderConstructor_InstantiateOrderClass_Order()
         {
-        Order testOrder = new Order("test", "5 bagels", 14.50, "7/6/23");
-        Assert.AreEqual(typeof(Order), testOrder.GetType());
+            Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
+            Assert.AreEqual(typeof(Order), testOrder.GetType());
+        }
+
+        [TestMethod]
+        public void OrderConstructor_ReturnsName_String()
+        {
+            Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
+            Assert.AreEqual("test", testOrder.Name);
         }
     }
 }
