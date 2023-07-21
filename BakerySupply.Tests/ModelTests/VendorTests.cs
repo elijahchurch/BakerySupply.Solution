@@ -14,5 +14,19 @@ namespace BakerySupply.Tests
             Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
             Assert.AreEqual(typeof(Vendor), testVendor.GetType());
         }
+
+        [TestMethod]
+        public void VendorConstructor_ReturnsName_String()
+        {
+            Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
+            Assert.AreEqual("test", testVendor.Name);
+        }
+
+        [TestMethod]
+        public void VendorConstructor_ReturnsDescription_String()
+        {
+            Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
+            Assert.AreEqual("Cornerstore that orders bread", testVendor.Description);
+        }
     }
 }
