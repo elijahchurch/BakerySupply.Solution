@@ -22,5 +22,12 @@ namespace BakerySupply.Tests
             Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
             Assert.AreEqual("test", testOrder.Name);
         }
+
+        [TestMethod]
+        public void OrderConstructor_ReturnsDescription_String()
+        {
+            Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
+            Assert.AreEqual("5 bagels", testOrder.Description);
+        }
     }
 }
