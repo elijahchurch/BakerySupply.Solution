@@ -8,7 +8,7 @@ namespace BakerySupply.Tests
     [TestClass]
     public class VendorTests : IDisposable
     {
-         public void Dispose()
+        public void Dispose()
         {
             Vendor.IdCounter = 0;
         }
@@ -33,7 +33,7 @@ namespace BakerySupply.Tests
             Assert.AreEqual("Cornerstore that orders bread", testVendor.Description);
         }
 
-         [TestMethod]
+        [TestMethod]
         public void IdCounterField_IdCounterFieldCanBeSetWithConstructor_Int()
         {
             Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
@@ -47,5 +47,16 @@ namespace BakerySupply.Tests
             Vendor vendor2 = new Vendor("Coffee Shop", "Shop located downtown");
             Assert.AreEqual(2, vendor2.Id);
         }
+
+        [TestMethod]
+        public void VendorConstructor_ReturnsOrderList_List()
+        {
+            Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
+            Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
+            testVendor.Orders.Add(testOrder);            
+            Assert.AreEqual(testOrder, testVendor.Orders[0]);
+        }
+
+
     }
 }
