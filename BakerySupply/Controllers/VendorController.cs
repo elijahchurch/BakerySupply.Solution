@@ -32,5 +32,14 @@ namespace BakerySupply.Controllers
             Vendor chosenVendor = Vendor.FindVendor(id);
             return View(chosenVendor);
         }
+
+        [HttpPost("/vendors/{id}/orders")]
+        public ActionResult Create(string name, string description, int cost, string date, int id)
+        {
+            Order newOrder = new Order(name, description, cost, date);
+            Vendor chosenVendor = Vendor.FindVendor(id);
+            chosenVendor.AddOrder(newOrder);
+            return View("Show", chosenVendor);
+        }
     }
 }
