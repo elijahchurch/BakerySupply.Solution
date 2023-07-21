@@ -1,14 +1,16 @@
-#  Title
+#  BakerySupply.Solution
 
 #### By: Jason Elijah Church
 
-#### Brief Description
+#### An application where a bakery owner can create and store information about vendor's they do business with.  
 
 ## Technologies Used
 * C#
 * Markdown
 * Git Bash
 * Visual Code Studio
+* CSS
+* Razor
 * .NET
 
 ## Description:
@@ -17,14 +19,15 @@
 ## Setup/ Installation Requirements
 
 1. Clone this repo.
-2. Open your terminal (e.g., Terminal or GitBash) and navigate to this project's production directory called "ProjectName".
-3. In the command line, run the command "dotnet run" to compile and execute the console application. Since this is a console application, you'll interact with it through text commands in your terminal.
+2. Open your terminal (e.g., Terminal or GitBash) and navigate to this project's production directory called "BakerySupply".
+3. In the command line, run the command "dotnet run" to compile and execute the application.
 4. Optionally, you can run "dotnet build" to compile this console app without running it.
-5. To run the tests for this project, navigate to this project's test directory called "ProjectName.Tests".
-6. in the command line, run the command "dotnet restore" then "dotnet test" to run all the tests that are found in the ModelTests directory.
+5. To run the tests for this project, navigate to this project's test directory called "BakerySupply.Tests".
+6. In the command line, run the command "dotnet restore" then "dotnet test" to run all the tests that are found in the ModelTests directory.
 
 ## Known Bugs
 
+No bugs that I have noticed. I do not store the Orders in their own static class list, and am not sure if this affects the data on any one page.
 
 ## License
 
