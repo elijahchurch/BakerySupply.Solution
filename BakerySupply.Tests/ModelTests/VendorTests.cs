@@ -68,6 +68,16 @@ namespace BakerySupply.Tests
             CollectionAssert.AreEqual(expectedList, resultList);
         }
 
+        [TestMethod]
+        public void FindVendor_ReturnsSearchedVendorObject_Vendor()
+        {
+            Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
+            Vendor vendor2 = new Vendor("Coffee Shop", "Shop located downtown");
+            Vendor vendor3 = new Vendor("Bakery", "Bakery custormer");
+            Vendor resultVendor = Vendor.FindVendor(3);
+            Assert.AreEqual(vendor3, resultVendor);
+        }
+
 
     }
 }
