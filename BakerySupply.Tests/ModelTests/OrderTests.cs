@@ -55,5 +55,13 @@ namespace BakerySupply.Tests
             Assert.AreEqual(1, Order.IdCounter);
         }
 
+        [TestMethod]
+        public void OrderConstructor_ReturnsId_Int()
+        {
+            Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
+            Assert.AreEqual(1, testOrder.Id);
+        }
+
+
     }
 }
