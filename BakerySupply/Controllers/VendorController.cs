@@ -25,5 +25,12 @@ namespace BakerySupply.Controllers
             Vendor newVendor = new Vendor(name, description);
             return RedirectToAction("Index");
         }
+
+        [HttpGet("/vendors/{id}")]
+        public ActionResult Show(int id)
+        {
+            Vendor chosenVendor = Vendor.FindVendor(id);
+            return View(chosenVendor);
+        }
     }
 }

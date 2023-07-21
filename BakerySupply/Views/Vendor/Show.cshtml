@@ -1,0 +1,25 @@
+@{
+    Layout = "_Layout";
+}
+@using BakerySupply.Models;
+
+<h1>@Model.Name</h1>
+
+<p>@Model.Description</p>
+
+<h3>Here is a List of your Orders with @Model.Name:</h3>
+
+@if (@Model.Orders.Count == 0)
+{
+    <h4>You currently have no Orders with this vendor.</h4>
+}
+
+@foreach (Order order in @Model.Orders)
+{
+    <h3><a href="/vendors/@Model.Id/orders/@order.Id">@order.Name</a></h3>
+}
+
+<br>
+<a href="/vendors/@Model.Id/orders/new">Create a new Order for @Model.Name</a>
+<br>
+<a href="/vendors">Go Back to Vendor List</a>
