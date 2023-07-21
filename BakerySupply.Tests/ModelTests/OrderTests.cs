@@ -36,5 +36,12 @@ namespace BakerySupply.Tests
             Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
             Assert.AreEqual(14, testOrder.Price);
         }
+
+        [TestMethod]
+        public void OrderConstructor_ReturnsDate_String()
+        {
+            Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
+            Assert.AreEqual("7/6/23", testOrder.Date);
+        }
     }
 }
