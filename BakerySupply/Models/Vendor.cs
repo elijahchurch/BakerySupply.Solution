@@ -4,6 +4,9 @@ namespace BakerySupply.Models
 {
     public class Vendor
     {
-        // Business Logic goes here.
+        public Vendor(string name, string description)
+        {
+            
+        }
     }
 }
