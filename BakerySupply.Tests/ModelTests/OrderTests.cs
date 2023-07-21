@@ -29,5 +29,12 @@ namespace BakerySupply.Tests
             Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
             Assert.AreEqual("5 bagels", testOrder.Description);
         }
+
+        [TestMethod]
+        public void OrderConstructor_ReturnsPrice_Int()
+        {
+            Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
+            Assert.AreEqual(14, testOrder.Price);
+        }
     }
 }
