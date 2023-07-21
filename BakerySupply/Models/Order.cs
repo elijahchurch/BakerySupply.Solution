@@ -8,6 +8,7 @@ namespace BakerySupply.Models
         public string Description { get; set; }
         public int Price { get; set; }
         public string Date {get; set;}
+        public static int IdCounter {get; set;}
 
         public Order(string name, string description, int price, string date)
         {
@@ -15,6 +16,7 @@ namespace BakerySupply.Models
             Description = description;
             Price = price;
             Date = date;
+            IdCounter +=1;
         }
     }
 }

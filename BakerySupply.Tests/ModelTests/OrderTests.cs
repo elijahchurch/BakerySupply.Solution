@@ -6,8 +6,12 @@ using System;
 namespace BakerySupply.Tests
 {
     [TestClass]
-    public class OrderTests
+    public class OrderTests : IDisposable
     {
+        public void Dispose()
+        {
+            Order.IdCounter = 0;
+        }
         // Test methods go here
         [TestMethod]
         public void OrderConstructor_InstantiateOrderClass_Order()
@@ -43,5 +47,13 @@ namespace BakerySupply.Tests
             Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
             Assert.AreEqual("7/6/23", testOrder.Date);
         }
+
+        [TestMethod]
+        public void UniqueIdField_UniqueIdFieldCanBeSetWithConstructor_Int()
+        {
+            Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
+            Assert.AreEqual(1, Order.IdCounter);
+        }
+
     }
 }
