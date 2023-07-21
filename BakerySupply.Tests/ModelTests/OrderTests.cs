@@ -1,10 +1,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectName.Models;
+using BakerySupply.Models;
+using System.Collections.Generic;
+using System;
 
-namespace ProjectName.Tests
+namespace BakerySupply.Tests
 {
     [TestClass]
-    public class ClassNameTests
+    public class VendorTests
     {
         // Test methods go here
         [TestMethod]
