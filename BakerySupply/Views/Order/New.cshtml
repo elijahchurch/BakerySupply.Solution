@@ -1,13 +1,13 @@
 @{
     Layout = "_Layout";
 }
-
+@* Model is chosen vendor *@
 <h1> Fill out this form to create a new order for @Model.Name</h1>
 <form action="/vendors/@Model.Id/orders" method="post">
     <label for="name">Enter a name for this Order:</label>
     <input id="name" name="name" type="text" required>
     <br>
-    <label for="description">Enter a brief description for this order:</label>
+    <label for="description">Enter a description for this order:</label>
     <input id="description" name="description" type="text" required>
     <br>
     <label for="cost">Cost of Order:</label>
@@ -15,7 +15,6 @@
     <br>
     <label for="date">Date of Order:</label>
     <input id="date" name="date" type="date" required>
-    @* <input id="vendorId" name="vendorId" value="@Model.Id" hidden> *@
     <br>
     <button type="submit">Submit Order</button>
 </form>

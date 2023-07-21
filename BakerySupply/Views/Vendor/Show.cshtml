@@ -3,11 +3,13 @@
 }
 @using BakerySupply.Models;
 
+@* Model is chosen vendor *@
+
 <h1>@Model.Name</h1>
 
 <p>@Model.Description</p>
 
-<h3>Here is a List of your Orders with @Model.Name:</h3>
+<h3>Your Orders with @Model.Name:</h3>
 
 @if (@Model.Orders.Count == 0)
 {
