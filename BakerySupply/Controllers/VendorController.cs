@@ -58,5 +58,13 @@ namespace BakerySupply.Controllers
             return View("Show", chosenVendor);
         }
 
+        [HttpPost("/vendors/{id}/delete")]
+        public ActionResult Delete(int id)
+        {
+            Vendor chosenVendor = Vendor.FindVendor(id);
+            Vendor.Delete(chosenVendor);
+            return RedirectToAction("Index");
+        }
+
     }
 }

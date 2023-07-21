@@ -25,4 +25,8 @@
 <a href="/vendors/@Model.Id/orders/new">Create a new Order for @Model.Name</a>
 <br>
 <a href=/vendors/@Model.Id/edit>Update Vendor information</a>
+<br>
+<form action="/vendors/@Model.Id/delete" method="post">
+    <button type="submit">Remove Vendor</button>
+</form>
 <p><a href="/vendors">Go Back to Vendor List</a></p>
