@@ -14,5 +14,13 @@ namespace BakerySupply.Controllers
             return View(chosenVendor);
         }
 
+        [HttpGet("vendors/{vendorId}/orders/{orderId}")]
+        public ActionResult Show(int vendorId, int orderId)
+        {
+            Vendor chosenVendor = Vendor.FindVendor(vendorId);
+            Order chosenOrder = chosenVendor.Orders.Find(x=> x.Id == orderId);
+            return View(chosenOrder);
+        }
+
     }
 }
