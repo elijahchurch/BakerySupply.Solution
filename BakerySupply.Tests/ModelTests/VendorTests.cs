@@ -39,5 +39,13 @@ namespace BakerySupply.Tests
             Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
             Assert.AreEqual(1, Vendor.IdCounter);
         }
+
+        [TestMethod]
+        public void VendorConstructor_ReturnsId_Int()
+        {
+            Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
+            Vendor vendor2 = new Vendor("Coffee Shop", "Shop located downtown");
+            Assert.AreEqual(2, vendor2.Id);
+        }
     }
 }
