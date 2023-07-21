@@ -8,15 +8,26 @@ namespace BakerySupply.Models
         public string Description { get; set; }
         public static int IdCounter { get; set; }
         public int Id { get; set; }
-        public List<Order> Orders { get; set;}
+        public List<Order> Orders { get; set; }
+        public static List<Vendor> _vendorList = new List<Vendor> { };
         public Vendor(string name, string description)
         {
             Name = name;
             Description = description;
             IdCounter += 1;
             Id = IdCounter;
-            Orders = new List<Order>{};
+            Orders = new List<Order> { };
+            _vendorList.Add(this);
+        }
 
+        public static List<Vendor> GetAll()
+        {
+            return _vendorList;
+        }
+
+        public static void ClearAll()
+        {
+            _vendorList.Clear();
         }
     }
 }

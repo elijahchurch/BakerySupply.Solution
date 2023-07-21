@@ -11,6 +11,7 @@ namespace BakerySupply.Tests
         public void Dispose()
         {
             Vendor.IdCounter = 0;
+            Vendor.ClearAll();
         }
         [TestMethod]
         public void VendorConstructor_InstantiateVendorClass_Vendor()
@@ -55,6 +56,16 @@ namespace BakerySupply.Tests
             Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
             testVendor.Orders.Add(testOrder);            
             Assert.AreEqual(testOrder, testVendor.Orders[0]);
+        }
+
+        [TestMethod]
+        public void GetAll_ReturnsAllVendorObjects_VendorList()
+        {
+            Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
+            Vendor vendor2 = new Vendor("Coffee Shop", "Shop located downtown");
+            List<Vendor> expectedList = new List<Vendor> { testVendor, vendor2};
+            List <Vendor> resultList = Vendor.GetAll();
+            CollectionAssert.AreEqual(expectedList, resultList);
         }
 
 
