@@ -20,6 +20,11 @@ namespace BakerySupply.Models
             _vendorList.Add(this);
         }
 
+        public void AddOrder(Order newOrder)
+        {
+            Orders.Add(newOrder);
+        }
+
         public static Vendor FindVendor(int searchId)
         {
             return _vendorList.Find(x=> x.Id == searchId);

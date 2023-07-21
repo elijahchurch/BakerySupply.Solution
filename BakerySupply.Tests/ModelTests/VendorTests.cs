@@ -54,7 +54,7 @@ namespace BakerySupply.Tests
         {
             Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
             Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
-            testVendor.Orders.Add(testOrder);            
+            testVendor.Orders.Add(testOrder);
             Assert.AreEqual(testOrder, testVendor.Orders[0]);
         }
 
@@ -63,8 +63,8 @@ namespace BakerySupply.Tests
         {
             Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
             Vendor vendor2 = new Vendor("Coffee Shop", "Shop located downtown");
-            List<Vendor> expectedList = new List<Vendor> { testVendor, vendor2};
-            List <Vendor> resultList = Vendor.GetAll();
+            List<Vendor> expectedList = new List<Vendor> { testVendor, vendor2 };
+            List<Vendor> resultList = Vendor.GetAll();
             CollectionAssert.AreEqual(expectedList, resultList);
         }
 
@@ -76,6 +76,17 @@ namespace BakerySupply.Tests
             Vendor vendor3 = new Vendor("Bakery", "Bakery custormer");
             Vendor resultVendor = Vendor.FindVendor(3);
             Assert.AreEqual(vendor3, resultVendor);
+        }
+
+        [TestMethod]
+        public void AddOrder_AssociatesOrderWithVendor_OrderList()
+        {
+            Order testOrder = new Order("test", "5 bagels", 14, "7/6/23");
+            List<Order> expectedList = new List<Order> {testOrder};
+            Vendor testVendor = new Vendor("test", "Cornerstore that orders bread");
+            testVendor.AddOrder(testOrder);
+            List<Order> resultList = testVendor.Orders;            
+            CollectionAssert.AreEqual(expectedList, resultList);
         }
 
 
