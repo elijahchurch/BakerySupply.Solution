@@ -14,6 +14,7 @@
 * .NET
 
 ## Description:
+This application was created mainly with C#, and its primary purpose is to serve as a sight to store and access information on vendors and orders for a business. Two custom classes were created for this project: Vendor and Order. The vendor class has a constructor that stores the name and description of a vendor (inputted as strings) into two seperate properites, creates a unique Id property that is generated on its relation to a static field IdCounter that goes up by 1 every time a new instance of the class is made, and also adds the Vendor object into a static list of Vendor objects. The class also has methods to add Order objects to a specific Vendor, find a specific vendor, retrieve a list of all the vendors, and delete a vendor. The Order 
 
 
 ## Setup/ Installation Requirements
